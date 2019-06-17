@@ -1,5 +1,15 @@
 import * as fs from 'fs'
 
+const convertCreateReactAppEnv = (data: object) => {
+  let str = '';
+  for (var key in data) {
+    if (data.hasOwnProperty(key)) {           
+        str += `REACT_APP_${key}=${data[key]}`;
+    }
+  }
+  return str
+}
+
 export default class StackOutputFile {
   constructor (
     public path: string
@@ -16,6 +26,8 @@ export default class StackOutputFile {
       case 'YAML':
       case 'YML':
         return require('yamljs').stringify(data)
+      case 'REACT_APP':
+        return convertCreateReactAppEnv(data)
       default:
         throw new Error('No formatter found for `' + ext + '` extension')
     }
