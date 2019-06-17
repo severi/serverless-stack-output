@@ -1,6 +1,6 @@
 {
   "name": "@severi/serverless-stack-output",
-  "version": "0.4.3",
+  "version": "0.4.6",
   "description": "Serverless plugin to process AWS CloudFormation Stack Output",
   "license": "MIT",
   "author": "Severi Haverila <severi.haverila@gmail.com>",
